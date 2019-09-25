@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #eee;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto Thin", sans-serif;
+}
+
+h1 {
+  margin: 48px;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-align: center;
+}
+
+.radio-container {
+  font-size: 24px;
+  padding: 8px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  padding-right: 32px;
+}
+
+label:nth-last-child(1) {
+  padding-right: 0;
+}
+
+label::before {
+  content: "";
+  border: 2px solid #222;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: -8px 20px;
+  margin-left: 0;
+  border-radius: 50%;
+}
+
+label::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(34, 34, 34, 0);
+  left: 7px;
+  top: 12px;
+  margin: -8px 20px;
+  margin-left: 0;
+  border-radius: 50%;
+
+  transition: all 0.4s;
+}
+
+input[type="radio"]:checked + label::after {
+  background: rgba(34, 34, 34, 1);
+}
